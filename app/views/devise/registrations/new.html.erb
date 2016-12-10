@@ -1,0 +1,40 @@
+<div class="row centered-form">
+	<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2 class="panel-title">Sign Up <small>It's free!</small></h2>
+			</div>
+			<div class="panel-body">
+				<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+				<%= f.error_notification %>
+				<form role="form">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="form-group">
+								<%= f.input :email, required: true, autofocus: true, class:"form-control input-sm floatlabel" %>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="form-group">
+								<%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class:"form-control input-sm floatlabel" %>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="form-group">
+								<%= f.input :password_confirmation, required: true, class:"form-control input-sm floatlabel" %>
+							</div>
+						</div>
+					</div>
+					
+					<input type="submit" value="Register" class="btn btn-info btn-block">
+					<input type="Login"  value="Log in" class="btn btn-primary btn-block">
+					<%= render "devise/shared/links" %>
+				</form>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
