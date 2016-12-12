@@ -11,7 +11,8 @@
             <hr>
             <img class="img-responsive" src="http://placehold.it/900x300" alt="">
             <hr>
-            <p class="lead"><%= @post.body %></p>
+            <p class="lead"><%= markdown(@post.body).html_safe%></p>
+            <!-- %p=  markdown(@post.description).html_safe -->
              <%=  link_to "Edit", edit_post_path, class: "btn btn-primary" %>
              <%=link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
             <hr>

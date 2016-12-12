@@ -11,5 +11,5 @@
   .form-group  
     = f.input :title, input_html: { class: 'form-control'}
   .form-group
-    = f.cktext_area :body, input_html: { class: 'form-control'}
+    = f.cktext_area :body, id: "body", input_html: { class: 'form-control'}
     = f.button :submit, class: 'btn btn-primary'
