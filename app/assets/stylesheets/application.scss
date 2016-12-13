@@ -20,3 +20,24 @@
 	width: 54%;
     height: 16%;
 }
+header {
+	background-color: red;
+}
+
+
+.container-fluid .row{
+  width: 100%;
+  background-image: url( image_path('logo.jpg'));
+}
+/*.container .jumbotron{*/
+	/*background-image: url("/assets/logo.jpg");*/
+	/*background-size: cover;*/
+	/*background-repeat: none;*/
+	/*background-color: red;*/
+
+	/*color: red;*/
+
+
+/*.container {
+	background-color: red;
+}*/
