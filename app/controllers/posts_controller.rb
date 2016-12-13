@@ -28,8 +28,10 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
+      flash[:notice] = "Post has been updated."
       redirect_to @post
     else
+      flash[:alert] = "Post has not been updated."
       render 'edit'
     end
   end
@@ -42,7 +44,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :image)
   end
 
   def find_post

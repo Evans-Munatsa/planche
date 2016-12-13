@@ -9,13 +9,18 @@
             <hr>
             <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
             <hr>
-            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+            
+            <%= image_tag @post.image.url, class: "img-fluid"%>
+
             <hr>
             <p class="lead"><%= markdown(@post.body).html_safe%></p>
-            <!-- %p=  markdown(@post.description).html_safe -->
-             <%=  link_to "Edit", edit_post_path, class: "btn btn-primary" %>
+             <% if user_signed_in? %>
+             <%=link_to "Edit", edit_post_path, class: "btn btn-primary" %>
              <%=link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
+             <% end %>
             <hr>
+
+
             <!-- Blog Comments -->
             <!-- Comments Form -->
             <div class="well">

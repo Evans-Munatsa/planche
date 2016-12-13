@@ -10,7 +10,82 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require 'masonry/transitions'
  *= require_tree .
  *= require_self
  */
-@import "bootstrap"
+@import "bootstrap";
+
+
+.img-fluid {
+	width: 54%;
+    height: 16%;
+}
+header {
+	background-color: red;
+}
+
+
+img {
+    vertical-align: middle;
+    width: 38%;
+}
+
+
+.thumbnail {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.thumbnail img.portrait {
+  width: 100%;
+  height: auto;
+}
+
+
+.panel-default{
+  background-color: cadetblue;
+}
+
+
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.business-header {
+    height: 400px;
+    background: url('http://www.metal-archives.com/images/1/1/8/7/1187_logo.jpg?0032') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+footer {
+    margin: 50px 0;
+}

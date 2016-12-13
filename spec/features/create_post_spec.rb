@@ -4,7 +4,7 @@ describe "creating posts" do
 
   before do
     visit root_path
-     click_link "New Post"
+    click_link "New Post"
   end
 
   scenario "create a post with valid details" do
