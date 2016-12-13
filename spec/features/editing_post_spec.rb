@@ -19,7 +19,7 @@ describe "Editing posts" do
 
   # scenario "when providing invalid attributes" do
   #   fill_in "Title", with: ""
-  #   fill_in "Body", with: ""
+  #   fill_in "body", with: ""
   #   click_button "Update Post"
   #   expect(page).to have_content "Post has not been updated."
   # end

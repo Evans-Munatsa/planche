@@ -13,4 +13,10 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap"
+@import "bootstrap";
+
+
+.img-fluid {
+	width: 54%;
+    height: 16%;
+}
