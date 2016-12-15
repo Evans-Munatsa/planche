@@ -17,75 +17,66 @@
 @import "bootstrap";
 
 
-.img-fluid {
-	width: 54%;
-    height: 16%;
-}
-header {
-	background-color: red;
-}
 
-
-img {
-    vertical-align: middle;
-    width: 38%;
+body
+{
+    padding-top: 20px;
+    background-color: goldenrod;
 }
 
-
-.thumbnail {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
+.post
+{
+    background-color: brown;
+    overflow: hidden;
+    box-shadow: 0 0 1px #CCC;
 }
-.thumbnail img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  width: auto;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+.post img
+{
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
 }
-.thumbnail img.portrait {
-  width: 100%;
-  height: auto;
+.post .content
+{
+    padding: 15px;
 }
-
-
-.panel-default{
-  background-color: cadetblue;
+.post .author
+{
+    font-size: 11px;
+    color: #737373;
+    padding: 25px 30px 20px;
 }
-
-
-
-body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+.post .post-img-content
+{
+    height: 196px;
+    position: relative;
 }
-
-/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
-
-.business-header {
-    height: 400px;
-    background: url('http://www.metal-archives.com/images/1/1/8/7/1187_logo.jpg?0032') center center no-repeat scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+.post .post-img-content img
+{
+    position: absolute;
+    height: 218px;
+    width: 359px;
 }
-
-/* Customize the text color and shadow color and to optimize text legibility. */
-
-.tagline {
-    text-shadow: 0 0 10px #000;
-    color: #fff;
+.post .post-title
+{
+    display: table-cell;
+    vertical-align: bottom;
+    z-index: 2;
+    position: relative;
 }
-
-.img-center {
-    margin: 0 auto;
+.post .post-title b
+{
+    background-color: rgba(51, 51, 51, 0.58);
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #FFF;
+    padding: 10px 15px;
+    margin-top: 5px;
 }
 
-footer {
-    margin: 50px 0;
+.col-md-4 {
+    width: 33.33333333%;
+    padding-top: 20px;
 }

@@ -1,61 +1,24 @@
-<div class="container">
-<% if user_signed_in? %>
- <%= link_to('New Post', new_post_path) %>
-<% end %>
-	<div class="row">
-		<div class="col-lg-8">
-			<% @posts.each do |post| %>
-			<h1><%= link_to post.title, post %></h1>
-			<!-- Author -->
-			<p class="lead">
-				by <a href="#">Evans</a>
-			</p>
-			<p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
-			<div class="thumbnail">
-				
+<div class="row">
+	<% @posts.each do |post| %>
+	<div class="col-sm-4 col-md-4">
+		<div class="post">
+			<div class="post-img-content">
 				<%= link_to (image_tag post.image.url), post %>
+				<span class="post-title"><b><h1><%= link_to post.title, post %></h1></b><br /></span>
 			</div>
-			<hr>
-			<p><%= truncate(post.body, length: 160, escape: false) %></p>
-			<%= link_to 'read more', post, class: "btn btn-danger" %>
-			<hr>
-			<% end %>
+			<div class="content">
+				<div class="author">
+					By <b>Evans</b> |
+					<time datetime="2014-01-20">January 20th, 2014</time>
+				</div>
+				<div>
+					<p><%= truncate(post.body, length: 160, escape: false) %></p>
+				</div>
+				<div>
+					<%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
+				</div>
+			</div>
 		</div>
-		<!-- Blog Categories Well -->
-		<div class="col-md-4">
-			<div class="well">
-				<h4>Blog Categories</h4>
-				<div class="row">
-					<div class="col-lg-6">
-						<ul class="list-unstyled">
-							<li><a href="#">Category Name</a>
-						</li>
-						<li><a href="#">Category Name</a>
-					</li>
-					<li><a href="#">Category Name</a>
-				</li>
-				<li><a href="#">Category Name</a>
-			</li>
-		</ul>
 	</div>
-	<!-- /.col-lg-6 -->
-	<div class="col-lg-6">
-		<ul class="list-unstyled">
-			<li><a href="#">Category Name</a>
-		</li>
-		<li><a href="#">Category Name</a>
-	</li>
-	<li><a href="#">Category Name</a>
-</li>
-<li><a href="#">Category Name</a>
-</li>
-</ul>
+	<% end %>
 </div>
-<!-- /.col-lg-6 -->
-</div>
-<!-- /.row -->
-</div>
-</div>
-</div>
-</div>
-<%= link_to 'New post', new_post_path %>
