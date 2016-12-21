@@ -30,6 +30,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'ffaker', :git => 'https://github.com/EmmanuelOga/ffaker.git'
   gem 'sqlite3'
   gem 'byebug', platform: :mri
