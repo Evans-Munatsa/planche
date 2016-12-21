@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ckeditor/init
 //= require masonry/jquery.masonry
+//= require ckeditor/init
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
@@ -21,18 +21,4 @@
 $(function() {
   $('input').floatlabel({labelEndTop:0});
 });
-
-// $ ->
-//    $('#pins').imagesLoaded ->
-//      $('#pins').masonry
-//        itemSelector: '.box'
-//        isFitWidth: true
-
-//        
-$(function(){
-    
-    var m = new Masonry($('.grid').get()[0], {
-        itemSelector: ".thumbnail"
-    });
-
-});
+        

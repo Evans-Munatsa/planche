@@ -2,8 +2,16 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only:[ :new, :edit, :update, :create, :destroy ]
 
+  # def index
+  #   @posts = Post.all
+  # end
+
   def index
-    @posts = Post.all
+    if params[:id].blank?
+      @posts = Post.all.order('created_at DESC')
+    else
+      @posts = Category.find(params[:id]).posts.order(:created_at)
+    end
   end
 
   def new
