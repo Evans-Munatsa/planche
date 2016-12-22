@@ -7,5 +7,6 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+  	 @posts = Post.all
   end
 end
