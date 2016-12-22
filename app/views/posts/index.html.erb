@@ -1,28 +1,24 @@
 <div class="row">
-	<% @posts.each do |post| %>
-	<div class="col-sm-4 col-md-4">
-	   <div id=items.transition-enabled >
-	   	
-	   
-		<div class="post">
-			<div class="post-img-content">
-				<%= link_to (image_tag post.image.url), post %>
-				<span class="post-title"><b><h1><%= link_to post.title, post %></h1></b><br /></span>
-			</div>
-			<div class="content">
-				<div class="author">
-					By <b>Evans</b> |
-					<time datetime="2014-01-20">January 20th, 2014</time>
-				</div>
-				<div>
-					<p><%= truncate(post.body, length: 160, escape: false) %></p>
-				</div>
-				<div>
-					<%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div>
-	<% end %>
+    <% @posts.each do |post| %>
+    <div class="col-sm-4 col-md-4">
+        <div class="post">
+            <div class="post-img-content">
+                <%= link_to (image_tag post.image.url), post %>
+                <span class="post-title"><b><h1><%= link_to post.title, post %></h1></b><br /></span>
+            </div>
+            <div class="content">
+                <div class="author">
+                    By <b>Evans</b> |
+                    <time><%= relative_time(post.created_at) %></time>
+                </div>
+                <div>
+                    <p><%= truncate(post.body, length: 160, escape: false) %></p>
+                </div>
+                <div>
+                    <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
 </div>

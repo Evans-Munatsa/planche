@@ -8,4 +8,5 @@ class Post < ApplicationRecord
   validates_presence_of :body
 
   belongs_to :category
+  has_many :comments
 end
