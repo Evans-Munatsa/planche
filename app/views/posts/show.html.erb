@@ -2,27 +2,19 @@
     <div class="row">
         <div class="col-lg-8">
             <h1><%= @post.title %></h1>
-            <!-- Author -->
-            <p class="lead">
-                by <a href="#">Evans</a>
-            </p>
             <hr>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
+            <p><span class="glyphicon glyphicon-time"></span>Posted <%= relative_time(@post.created_at) %> ago</p>
             <hr>
             <div class="thumbnail">
                 <%= image_tag @post.image.url, class: "img-fluid"%>
             </div>
-
             <hr>
             <p class="lead"><%= markdown(@post.body).html_safe%></p>
-             <% if user_signed_in? %>
-             <%=link_to "Edit", edit_post_path, class: "btn btn-primary" %>
-             <%=link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
-             <% end %>
+            <% if user_signed_in? %>
+            <%=link_to "Edit", edit_post_path, class: "btn btn-primary" %>
+            <%=link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
+            <% end %>
             <hr>
-
-
-            <!-- Blog Comments -->
             <!-- Comments Form -->
             <div class="well">
                 <h4>Leave a Comment:</h4>
@@ -38,18 +30,31 @@
             </div>
             <hr>
             <!-- Posted Comments -->
-            <!-- Comment -->
+            
             <div class="media">
-                <% @post.comments.each do |comment| %>
                 <div class="media-body">
+                <% @post.comments.each do |comment| %>
+                    <div class="pull-left">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </div>
                     <h4 class="media-heading">Comment:
                     <small>August 25, 2014 at 9:30 PM</small>
                     </h4>
                     <p> <%= comment.comment %></p>
+                     <% end %>
                 </div>
+            </div>
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+            <p class="lead">Story Categories</p>
+            <% Category.all.each do |category| %>
+            <div class="list-group-item">
+                <%= link_to category.name, posts_path(id: category.id), class:"list-group" %>
             </div>
             <% end %>
         </div>
     </div>
+    <!-- /.row -->
+    <hr>
 </div>
-

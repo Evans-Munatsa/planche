@@ -1,7 +1,0 @@
-<div class="row">
-	<% Category.all.each do |category| %>
-	<div class="col-sm-4 col-md-4">
-		<span class="post-title"><b><h1><%= link_to category.name, posts_path(id: category.id) %></h1></b><br /></span>
-	</div>
-	<% end %>
-</div>

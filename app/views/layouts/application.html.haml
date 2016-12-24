@@ -8,9 +8,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:crossorigin => "anonymous", :href => "stylsheets/bootstrap.min.css"}
     %link{:crossorigin => "anonymous", :href => "stylsheets/bootstrap-theme.min.css"}
-  = render "partials/header"
 
   %body
+    = render "partials/header"
     .container
       / = render 'partials/messages'
       - flash.each do |name, msg|
