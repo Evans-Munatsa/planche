@@ -1,10 +1,17 @@
 class CategoriesController < ApplicationController
 
   before_action :find_category, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only:[ :new, :edit, :update, :create, :destroy ]
 
   def index
-    @categories = Category.all
+    if params[:category].blank?
+      @category = Category.all.order('created_at DESC')
+    else
+      @post_id = Post.find_by(title: params[:category]).id
+      @category = Category.where(category_id: @category_id).order("created_at DESC")
+    end
   end
+
 
   def new
     @category = Category.new
