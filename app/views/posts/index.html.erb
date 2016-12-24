@@ -21,7 +21,7 @@
         </div>
 
         <div class="col-md-3">
-            <p class="lead">Story Categories</p>
+            <b><h5 class="lead">Story Categories</h5></b>
             <% Category.all.each do |category| %>
             <div class="list-group-item">
                 <h6><%= link_to category.name, posts_path(id: category.id), class:"list-group" %></h6>
