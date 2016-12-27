@@ -11,12 +11,11 @@
 
   %body
     = render "partials/header"
-    .container
-      / = render 'partials/messages'
-      - flash.each do |name, msg|
-        = content_tag :div, msg, class: 'alert alert-info'
-      = yield
+    / .container
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: 'alert alert-info'
+    = yield
 
-      = render "partials/footer"
-    %script{:crossorigin => "anonymous", :src => "javascripts/jquery-3.1.1.js"}
-    %script{:crossorigin => "anonymous", :src => "javascripts/bootstrap.min.js"}
+    = render "partials/footer"
+  %script{:crossorigin => "anonymous", :src => "javascripts/jquery-3.1.1.js"}
+  %script{:crossorigin => "anonymous", :src => "javascripts/bootstrap.min.js"}
