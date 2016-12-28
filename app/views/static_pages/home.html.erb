@@ -1,43 +1,17 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="row carousel-holder">
-                <div class="col-md-12">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img class="slide-image" src="assets/logo.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row first">
-
-                <% @posts.each do |post| %>
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <%= link_to (image_tag post.image.url), post %>
-                        <h4><%= link_to post.title, post %></h4>
-                        <div class="caption">
-                            <p><%= truncate(post.body, length: 160, escape: false) %></p>
-                        </div>
-                        <div class="ratings">
-                            <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
-                            <h6>Posted <%= relative_time(post.created_at)%> ago</h6>
-                        </div>
-                    </div>
-                </div>
-                <% end %>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <p class="lead">Story Categories</p>
-            <% Category.all.each do |category| %>
-            <div class="list-group-item">
-                <h6><%= link_to category.name, posts_path(id: category.id), class:"list-group" %></h6>
-            </div>
-            <% end %>
-        </div>
-    </div>
+<div class="container posts">
+  <div class="row">
+    <section id="pinBoot">
+    <% @posts.each do |post| %>
+      <article class="white-panel">
+       <%= link_to (image_tag post.image.url), post %> 
+        <h4><%= link_to post.title, post %></h4>
+        <p><%= truncate(post.body, length: 160, escape: false) %></p>
+        <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
+        <hr>
+        <h6>Posted <%= relative_time(post.created_at)%> ago</h6>
+      </article>
+    <% end %>
+    </section>
+    <hr>
+  </div>
 </div>

@@ -22,6 +22,8 @@ gem 'redcarpet'
 gem 'coderay'
 gem 'albino'
 gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'jquery-turbolinks'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use Capistrano for deployment
