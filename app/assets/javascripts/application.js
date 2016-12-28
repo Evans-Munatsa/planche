@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require masonry/jquery.masonry
 //= require ckeditor/init
 //= require bootstrap
@@ -37,30 +38,9 @@ single_column_breakpoint: 700
 });
 });
 
-/*
-Ref:
-Thanks to:
-http://www.jqueryscript.net/layout/Simple-jQuery-Plugin-To-Create-Pinterest-Style-Grid-Layout-Pinterest-Grid.html
-*/
 
 
-/*
-    Pinterest Grid Plugin
-    Copyright 2014 Mediademons
-    @author smm 16/04/2014
 
-    usage:
-
-     $(document).ready(function() {
-
-        $('#blog-landing').pinterest_grid({
-            no_columns: 4
-        });
-
-    });
-
-
-*/
 ;(function ($, window, document, undefined) {
     var pluginName = 'pinterest_grid',
         defaults = {
