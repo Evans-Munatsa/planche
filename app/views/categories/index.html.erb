@@ -1,0 +1,9 @@
+<div id="wrapper">
+  <div id="columns">
+  <% Category.all.each do |category| %>
+    <div class="pin">
+      <h4><%= link_to category.name, posts_path(id: category.id), class:"list-group" %></h4>
+    </div> 
+    <% end %> 
+  </div>
+</div>
