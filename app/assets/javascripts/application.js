@@ -33,3 +33,12 @@ $(document).ready(function() {
         single_column_breakpoint: 700
     });
 });
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+

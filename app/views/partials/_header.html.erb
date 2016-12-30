@@ -30,3 +30,13 @@
     </div>
     <!-- /.container -->
 </nav>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <ul class="nav sidebar-nav">
+        <% Category.all.each do |category| %>
+        <li class="sidebar-brand"><%= link_to category.name, posts_path(id: category.id), class:"list-group" %></li>
+        <% end %>
+    </ul>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Categories</span>
