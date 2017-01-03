@@ -87,4 +87,7 @@ Rails.application.configure do
 
 
   config.serve_static_assets = true
+
+  # analytics
+  GA.tracker = "UA-89811701-1"
 end
