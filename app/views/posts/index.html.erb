@@ -1,15 +1,55 @@
-<div id="wrapper">
-  <div id="columns">
-  <% @posts.each do |post| %>
-    <div class="pin">
-      <%= link_to (image_tag post.image.url), post %>
-      <h4><%= link_to post.title, post %></h4>
-      <p><%= truncate(post.body, length: 160, escape: false) %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <% @posts.each do |post| %>
+      <div class="post-wrapper">
+        <h3><%= link_to post.title, post %></h3>
+        <h5>Written by <a href="">Evans</a>, <%= relative_time(post.created_at)%> ago</h5>
+        <br>
+        <div class="view overlay hm-white-light z-depth-1-half">
+          <!-- <img src="http://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg" class="img-fluid " alt=""> -->
+          <%= link_to (image_tag post.image.url), post %>
+          <div class="mask">
+          </div>
+        </div>
+        <p><%= truncate(post.body, length: 250, escape: false) %></p>
         <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
         <hr>
         <h6>Posted <%= relative_time(post.created_at)%> ago</h6>
-    </div> 
-    <% end %> 
+      </div>
+      <% end %>
+    </div>
+    <div class="col-lg-4">
+      <div class="widget-wrapper">
+        <h4>Categories</h4>
+        <br>
+        <% Category.all.each do |category| %>
+        <div class="list-group">
+          <%= link_to category.name, posts_path(id: category.id), class:"list-group-item" %>
+        </div>
+        <% end %>
+      </div>
+      <div class="widget-wrapper">
+        <h4>Subscription form:</h4>
+        <br>
+        <div class="card">
+          <div class="card-block">
+            <p><strong>Subscribe to our newsletter</strong></p>
+            <p>Once a week we will send you a summary of the most useful news</p>
+            <div class="md-form">
+              <i class="fa fa-user prefix"></i>
+              <input type="text" id="form1" class="form-control">
+              <label for="form1">Your name</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-envelope prefix"></i>
+              <input type="text" id="form2" class="form-control">
+              <label for="form2">Your email</label>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-

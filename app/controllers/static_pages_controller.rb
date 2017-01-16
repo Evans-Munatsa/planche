@@ -1,12 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
-  	 @posts = Post.all
+  	 @posts = Post.all.order('created_at DESC')
   end
 
   def about
-  end
-
-  def contact
-  	 @posts = Post.all
   end
 end
