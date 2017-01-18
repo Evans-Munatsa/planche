@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
+    <%= will_paginate @posts %>
       <% @posts.each do |post| %>
       <div class="post-wrapper">
         <h3><%= link_to post.title, post %></h3>

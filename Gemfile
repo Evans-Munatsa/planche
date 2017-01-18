@@ -21,6 +21,7 @@ gem 'rails_admin', '~> 1.0'
 gem 'redcarpet'
 gem 'coderay'
 gem 'albino'
+gem 'will_paginate'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'jquery-turbolinks'
 

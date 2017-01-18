@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     if params[:id].blank?
-      @posts = Post.all.order('created_at DESC')
+       @posts = Post.all.paginate(page: params[:page], per_page: 5).order('created_at DESC')
     else
       @posts = Category.find(params[:id]).posts.order(:created_at)
     end

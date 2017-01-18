@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
+      <%= will_paginate @posts %>
       <% @posts.each do |post| %>
       <div class="post-wrapper">
         <h3><%= link_to post.title, post %></h3>
@@ -26,6 +27,9 @@
         <% Category.all.each do |category| %>
         <div class="list-group">
           <%= link_to category.name, posts_path(id: category.id), class:"list-group-item" %>
+          <%= link_to "(#{category.posts.count})", posts_path(id: category.id), class:"list-group-item" %>
+          <%= pluralize(category.posts.count, 'Post') %>
+
         </div>
         <% end %>
       </div>
@@ -52,4 +56,5 @@
       </div>
     </div>
   </div>
+  <%= will_paginate @posts %>
 </div>
