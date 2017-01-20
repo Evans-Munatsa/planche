@@ -22,6 +22,7 @@ gem 'redcarpet'
 gem 'coderay'
 gem 'albino'
 gem 'will_paginate'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'jquery-turbolinks'
 

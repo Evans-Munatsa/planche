@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-    <%= will_paginate @posts %>
+      <%= will_paginate @posts %>
       <% @posts.each do |post| %>
       <div class="post-wrapper">
         <h3><%= link_to post.title, post %></h3>
@@ -15,8 +15,22 @@
         </div>
         <p><%= truncate(post.body, length: 250, escape: false) %></p>
         <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
-        <hr>
         <h6>Posted <%= relative_time(post.created_at)%> ago</h6>
+        
+        <%= link_to like_post_path(post), class: "like", method: :put do %>
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        <span class="badge"><%= post.get_upvotes.size %></span>
+        </button>
+        <% end %>
+        <%= link_to dislike_post_path(post), class: "like", method: :put do %>
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-down-up glyphicon-align-center" aria-hidden="true"></span>
+        <span class="badge"><%= post.get_downvotes.size %></span>
+        </button>
+
+        <% end %>
+        <hr>
       </div>
       <% end %>
     </div>
@@ -27,30 +41,12 @@
         <% Category.all.each do |category| %>
         <div class="list-group">
           <%= link_to category.name, posts_path(id: category.id), class:"list-group-item" %>
+          <%= link_to "(#{category.posts.count})", posts_path(id: category.id), class:"list-group-item" %>
+          <%= pluralize(category.posts.count, 'Post') %>
         </div>
         <% end %>
       </div>
-      <div class="widget-wrapper">
-        <h4>Subscription form:</h4>
-        <br>
-        <div class="card">
-          <div class="card-block">
-            <p><strong>Subscribe to our newsletter</strong></p>
-            <p>Once a week we will send you a summary of the most useful news</p>
-            <div class="md-form">
-              <i class="fa fa-user prefix"></i>
-              <input type="text" id="form1" class="form-control">
-              <label for="form1">Your name</label>
-            </div>
-            <div class="md-form">
-              <i class="fa fa-envelope prefix"></i>
-              <input type="text" id="form2" class="form-control">
-              <label for="form2">Your email</label>
-            </div>
-            <button class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
+  <%= will_paginate @posts %>
 </div>

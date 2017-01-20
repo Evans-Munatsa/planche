@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, only:[ :new, :edit, :update, :create, :destroy ]
 
 
   def index
     if params[:id].blank?
-       @posts = Post.all.paginate(page: params[:page], per_page: 5).order('created_at DESC')
+      @posts = Post.all.paginate(page: params[:page], per_page: 5).order('created_at DESC')
     else
       @posts = Category.find(params[:id]).posts.order(:created_at)
     end
@@ -45,6 +45,16 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to root_path
+  end
+
+  def upvote
+    @post.upvote_from current_user
+    redirect_to root_path
+  end
+
+  def downvote
+   @post.downvote_from current_user
+   redirect_to root_path
   end
 
   private
