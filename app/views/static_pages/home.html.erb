@@ -15,10 +15,21 @@
         </div>
         <p><%= truncate(post.body, length: 250, escape: false) %></p>
         <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
-        <hr>
-        <h6>Posted <%= relative_time(post.created_at)%> ago</h6>
-      </div>
+        <%= link_to like_post_path(post), class: "like", method: :put do %>
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+        Like
+        <span class="badge"><%= post.get_upvotes.size %></span>
+        </button>
+        <% end %>
+         <%= link_to dislike_post_path(post), class: "like", method: :put do %>
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+        dislike
+        <span class="badge"><%= post.get_downvotes.size %></span>
+        </button>
 
+        <% end %>
+      </div>
+      <hr>
       <% end %>
     </div>
     <div class="col-lg-4">
@@ -28,9 +39,6 @@
         <% Category.all.each do |category| %>
         <div class="list-group">
           <%= link_to category.name, posts_path(id: category.id), class:"list-group-item" %>
-          <%= link_to "(#{category.posts.count})", posts_path(id: category.id), class:"list-group-item" %>
-          <%= pluralize(category.posts.count, 'Post') %>
-
         </div>
         <% end %>
       </div>

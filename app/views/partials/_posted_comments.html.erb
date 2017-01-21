@@ -1,0 +1,11 @@
+<div class="media-body">
+    <% @post.comments.each do |comment| %>
+    <div class="pull-left">
+        <img class="media-object" src="http://placehold.it/64x64" alt="">
+    </div>
+    <h4 class="media-heading">Comment:
+    <small>August 25, 2014 at 9:30 PM</small>
+    </h4>
+    <p> <%= comment.comment %></p>
+    <% end %>
+</div>

@@ -1,31 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-      <%= will_paginate @posts %>
+     
       <% @posts.each do |post| %>
       <div class="post-wrapper">
         <h3><%= link_to post.title, post %></h3>
         <h5>Written by <a href="">Evans</a>, <%= relative_time(post.created_at)%> ago</h5>
         <br>
         <div class="view overlay hm-white-light z-depth-1-half">
-          <!-- <img src="http://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg" class="img-fluid " alt=""> -->
-          <%= link_to (image_tag post.image.url), post %>
-          <div class="mask">
-          </div>
+          <%= link_to (image_tag post.image.url), post, class:"img-fluid" %>
         </div>
         <p><%= truncate(post.body, length: 250, escape: false) %></p>
         <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
-        <h6>Posted <%= relative_time(post.created_at)%> ago</h6>
         
         <%= link_to like_post_path(post), class: "like", method: :put do %>
         <button type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        Like
         <span class="badge"><%= post.get_upvotes.size %></span>
         </button>
         <% end %>
         <%= link_to dislike_post_path(post), class: "like", method: :put do %>
         <button type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-down-up glyphicon-align-center" aria-hidden="true"></span>
+        dislike
         <span class="badge"><%= post.get_downvotes.size %></span>
         </button>
 
@@ -35,18 +31,7 @@
       <% end %>
     </div>
     <div class="col-lg-4">
-      <div class="widget-wrapper">
-        <h4>Categories</h4>
-        <br>
-        <% Category.all.each do |category| %>
-        <div class="list-group">
-          <%= link_to category.name, posts_path(id: category.id), class:"list-group-item" %>
-          <%= link_to "(#{category.posts.count})", posts_path(id: category.id), class:"list-group-item" %>
-          <%= pluralize(category.posts.count, 'Post') %>
-        </div>
-        <% end %>
-      </div>
+      <%= render "partials/categories_section" %>
     </div>
   </div>
-  <%= will_paginate @posts %>
 </div>

@@ -1,0 +1,9 @@
+<div class="widget-wrapper">
+	<h4>Categories</h4>
+	<br>
+	<% Category.all.each do |category| %>
+	<div class="list-group">
+		<%= link_to category.name, posts_path(id: category.id), class:"list-group-item" %>
+	</div>
+	<% end %>
+</div>
