@@ -17,42 +17,18 @@
             <hr>
             <!-- Comments Form -->
             <div class="well">
-                <h4>Leave a Comment:</h4>
-                <%= form_for([@post, @post.comments.build]) do |f| %>
-                <form role="form">
-                    <div class="form-group">
-                        <!-- <textarea class="form-control" rows="3"></textarea> -->
-                        <%= f.text_area :comment, class:"form-control" %>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-                <% end %>
+               <%= render "partials/comments_form" %>
             </div>
             <hr>
             <!-- Posted Comments -->
             
             <div class="media">
-                <div class="media-body">
-                <% @post.comments.each do |comment| %>
-                    <div class="pull-left">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </div>
-                    <h4 class="media-heading">Comment:
-                    <small>August 25, 2014 at 9:30 PM</small>
-                    </h4>
-                    <p> <%= comment.comment %></p>
-                     <% end %>
-                </div>
+                <%= render "partials/posted_comments" %>
             </div>
         </div>
         <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
-            <p class="lead">Story Categories</p>
-            <% Category.all.each do |category| %>
-            <div class="list-group-item">
-                <%= link_to category.name, posts_path(id: category.id), class:"list-group" %>
-            </div>
-            <% end %>
+        <div class="col-lg-4">
+            <%= render "partials/categories_section" %>
         </div>
     </div>
     <!-- /.row -->

@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   def upvote
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
 
   def downvote
    @post.downvote_from current_user
-   redirect_to root_path
+   redirect_to posts_path
   end
 
   private

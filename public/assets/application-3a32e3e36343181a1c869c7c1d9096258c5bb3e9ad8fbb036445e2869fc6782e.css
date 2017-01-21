@@ -18986,6 +18986,7 @@ i.btn-danger {
   overflow: hidden;
   position: relative;
   cursor: default;
+  text-align: -webkit-center;
 }
 
 /* line 8114, /Users/evansmunatsa/sites/projects/tadiwa/app/assets/stylesheets/posts.scss */
