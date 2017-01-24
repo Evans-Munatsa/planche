@@ -20,10 +20,6 @@
 //= require turbolinks
 //= require_tree .
 
-/* Demo Scripts for Making Twitter Bootstrap 3 Tab Play Nicely With The Masonry Library
- * on SitePoint by Maria Antonietta Perna
- */
-
 $(window).scroll(function() {
   var navbarColor = "62,195,246";//color attr for rgba
   var smallLogoHeight = $('.small-logo').height();
@@ -54,7 +50,4 @@ $(window).scroll(function() {
   } else {
     $('.navbar').css({"box-shadow": "none"});
   }
-  
-  
-  
 });
