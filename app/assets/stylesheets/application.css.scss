@@ -16,6 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 body {
     padding-top: 70px;
@@ -382,7 +383,7 @@ ul.nav {
   }
 
 .small-logo {
-  color: white;
+  color: cyan;
   font-size: 2.5em;
   padding-bottom: $small-logo-padding;
 }
