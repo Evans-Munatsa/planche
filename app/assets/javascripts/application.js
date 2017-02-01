@@ -20,25 +20,3 @@
 //= require turbolinks
 //= require_tree .
 
-/* Demo Scripts for Making Twitter Bootstrap 3 Tab Play Nicely With The Masonry Library
- * on SitePoint by Maria Antonietta Perna
- */
-
-$(document).ready(function() {
-    $('#pinBoot').pinterest_grid({
-        no_columns: 4,
-        padding_x: 10,
-        padding_y: 10,
-        margin_bottom: 50,
-        single_column_breakpoint: 700
-    });
-});
-
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-
