@@ -5,10 +5,6 @@
             <hr>
             <p><span class="glyphicon glyphicon-time"></span>Posted <%= relative_time(@post.created_at) %> ago</p>
             <hr>
-            <div class="thumbnail">
-                <%= image_tag @post.image.url, class: "img-fluid"%>
-            </div>
-            <hr>
             <p class="lead"><%= markdown(@post.body).html_safe%></p>
             <% if user_signed_in? %>
             <%=link_to "Edit", edit_post_path, class: "btn btn-primary" %>

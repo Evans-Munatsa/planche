@@ -7,12 +7,6 @@
         <h3><%= link_to post.title, post %></h3>
         <h5>Written by <a href="">Evans</a>, <%= relative_time(post.created_at)%> ago</h5>
         <br>
-        <div class="view overlay hm-white-light z-depth-1-half">
-          <!-- <img src="http://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg" class="img-fluid " alt=""> -->
-          <%= link_to (image_tag post.image.url), post %>
-          <div class="mask">
-          </div>
-        </div>
         <p><%= truncate(post.body, length: 250, escape: false) %></p>
         <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
         <%= link_to like_post_path(post), class: "like", method: :put do %>

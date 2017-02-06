@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 3.0'
+gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'simple_form'
 gem 'country_select'
 gem 'bootstrap-sass'
@@ -38,7 +39,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'ffaker', :git => 'https://github.com/EmmanuelOga/ffaker.git'
-  gem 'sqlite3'
   gem 'byebug', platform: :mri
 end
 
