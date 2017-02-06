@@ -13,7 +13,7 @@
             <hr>
             <!-- Comments Form -->
             <div class="well">
-               <%= render "partials/comments_form" %>
+                <%= render "partials/comments_form" %>
             </div>
             <hr>
             <!-- Posted Comments -->
@@ -24,7 +24,16 @@
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-lg-4">
-            <%= render "partials/categories_section" %>
+            <div class="well">
+                <h4> Categories</h4>
+                <div class="row">
+                    <% Category.all.each do |category| %>
+                    <%= link_to category.name, posts_path(id: category.id), class:"list-group-item" %>
+                    <% end %>
+                    <!-- /.col-lg-6 -->
+                </div>
+                <!-- /.row -->
+            </div>
         </div>
     </div>
     <!-- /.row -->

@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-     
       <% @posts.each do |post| %>
       <div class="post-wrapper">
         <h3><%= link_to post.title, post %></h3>
@@ -9,20 +8,27 @@
         <br>
         <p><%= truncate(post.body, length: 250, escape: false) %></p>
         <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
-        
         <%= link_to like_post_path(post), class: "like", method: :put do %>
         <span class="badge fa fa-thumbs-o-up"><%= post.get_upvotes.size %></span>
         <% end %>
         <%= link_to dislike_post_path(post), class: "like", method: :put do %>
         <span class="badge fa fa-thumbs-o-down"><%= post.get_downvotes.size %></span>
-
         <% end %>
-        <hr>
       </div>
+      <hr>
       <% end %>
     </div>
-    <div class="col-lg-4">
-      <%= render "partials/categories_section" %>
+    <div class="col-lg-4"> 
+      <div class="well">
+        <h4> Categories</h4>
+        <div class="row">
+          <% Category.all.each do |category| %>
+          <%= link_to category.name, posts_path(id: category.id), class:"list-group-item" %>
+          <% end %>
+          <!-- /.col-lg-6 -->
+        </div>
+        <!-- /.row -->
+      </div>
     </div>
   </div>
 </div>
