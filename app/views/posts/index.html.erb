@@ -7,9 +7,6 @@
         <h3><%= link_to post.title, post %></h3>
         <h5>Written by <a href="">Evans</a>, <%= relative_time(post.created_at)%> ago</h5>
         <br>
-        <div class="view overlay hm-white-light z-depth-1-half">
-          <%= link_to (image_tag post.image.url), post, class:"img-fluid" %>
-        </div>
         <p><%= truncate(post.body, length: 250, escape: false) %></p>
         <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
         
