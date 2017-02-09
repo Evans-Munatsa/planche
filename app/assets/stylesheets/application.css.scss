@@ -80,7 +80,7 @@ body p{
  /*footer*/
 
  .footer-distributed{
-    background-color: gold;
+    background-color: currentColor;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
@@ -386,6 +386,7 @@ ul.nav {
   color: cyan;
   font-size: 2.5em;
   padding-bottom: $small-logo-padding;
+  width: 118px;
 }
 
 /* *********************************
@@ -412,6 +413,9 @@ ul.nav {
   }
 }
 
+.content {
+    padding-top: 40px;
+}
 
 
 
