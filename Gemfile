@@ -20,10 +20,11 @@ gem 'stathat'
 gem 'google-analytics-rails', '1.1.0'
 gem 'masonry-rails'
 gem 'rails_admin', '~> 1.0'
+gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'redcarpet'
 gem 'coderay'
 gem 'albino'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.1.0'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'jquery-turbolinks'
@@ -55,6 +56,7 @@ group :production do
   gem 'pg', '0.19.0'
   gem 'rails_12factor'
 end
+gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -5,6 +5,7 @@
       <div class="post-wrapper">
         <h3><%= link_to post.title, post %></h3>
         <h5>Written by <a href="">Evans</a>, <%= relative_time(post.created_at)%> ago</h5>
+        <h1>Posted By: <%= post.user.email %></h1>
         <br>
         <p><%= truncate(post.body, length: 250, escape: false) %></p>
         <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>

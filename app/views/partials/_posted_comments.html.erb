@@ -1,6 +1,6 @@
 <div class="media-body">
     <% @post.comments.each do |comment| %>
-    <i class="fa fa-comments" aria-hidden="true"></i>
+    <i class="fa fa-comments" aria-hidden="true">comment by</i>
     <p> <%= comment.comment %></p>
     <% end %>
 </div>
