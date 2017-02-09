@@ -5,7 +5,6 @@
       <div class="post-wrapper">
         <h3><%= link_to post.title, post %></h3>
         <h5>Written by <a href="">Evans</a>, <%= relative_time(post.created_at)%> ago</h5>
-        <h1>Posted By: <%= post.user.email %></h1>
         <br>
         <p><%= truncate(post.body, length: 250, escape: false) %></p>
         <%= link_to 'read more', post, class: "btn btn-warning btn-sm" %>
@@ -15,7 +14,10 @@
         <%= link_to dislike_post_path(post), class: "like", method: :put do %>
         <span class="badge fa fa-thumbs-o-down"><%= post.get_downvotes.size %></span>
         <% end %>
+        <br>
+        <div class="fb-share-button" data-href="http://tadiwa.herokuapp.com/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftadiwa.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></div>
       </div>
+
       <hr>
       <% end %>
     </div>
