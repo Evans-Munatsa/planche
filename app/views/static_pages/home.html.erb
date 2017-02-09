@@ -17,7 +17,10 @@
         <% end %>
         <br>
         <div class="fb-share-button" data-href="http://tadiwa.herokuapp.com/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftadiwa.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></div>
-        <%= link_to " share", 'https://twitter.com/share'+request.fullpath, :target => :blank, class: 'btn btn-primary btn-sm fa fa-twitter' %>
+        <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Hello%20world"
+  data-size="large">
+Tweet</a>
       </div>
       <hr>
       <% end %>
