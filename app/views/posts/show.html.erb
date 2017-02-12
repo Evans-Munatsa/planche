@@ -6,6 +6,7 @@
             <p><span class="glyphicon glyphicon-time"></span>Posted <%= relative_time(@post.created_at) %> ago</p>
             <hr>
             <p class="lead"><%= markdown(@post.body).html_safe%></p>
+            <%= social_share_button_tag(@post.title) %>
             <% if user_signed_in? %>
             <%=link_to "Edit", edit_post_path, class: "btn btn-primary" %>
             <%=link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>

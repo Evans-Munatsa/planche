@@ -28,6 +28,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'jquery-turbolinks'
+gem 'social-share-button'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

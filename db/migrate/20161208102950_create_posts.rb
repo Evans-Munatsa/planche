@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :title
       t.text :body
       t.integer :category_id, index: true, foreign_key: true
+      t.integer :user_id, index: true, foreign_key: true
 
       t.timestamps
     end

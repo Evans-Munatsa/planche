@@ -12,6 +12,7 @@
  *
  *= require_self
  *= require posts.scss
+ *= require social-share-button
  */
 
 @import "bootstrap-sprockets";
@@ -105,6 +106,8 @@ body p{
     color:  #ffffff;
     font: normal 36px 'Cookie', cursive;
     margin: 0 0 10px;
+    padding-bottom: 10px;
+    padding-left: 6px;
 }
 
 .footer-distributed h3 span{
@@ -423,6 +426,17 @@ ul.nav {
     color:#33ccff;
 }
 
+
+/*social media*/
+$size: 24px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
 
 
 
