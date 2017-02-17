@@ -5,7 +5,7 @@
       <% @posts.each do |post| %>
       <div class="post-wrapper">
         <h3><%= link_to post.title, post %></h3>
-        <h5>Written by: <span><%= post.user.email %></span></h5>
+        <h5>Written by: <span><%= post.user.username %></span></h5>
         <p><%= relative_time(post.created_at)%> ago</p>
         <br>
         <p><%= truncate(post.body, length: 250, escape: false) %></p>
