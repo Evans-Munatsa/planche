@@ -3,7 +3,8 @@
         <div class="col-lg-8">
             <h1><%= @post.title %></h1>
             <hr>
-            <p><span class="glyphicon glyphicon-time"></span>Posted <%= relative_time(@post.created_at) %> ago</p>
+            <h5>Written by: <span><%= @post.user.username %></span></h5>
+            <p><span class="fa fa-clock-o"></span> <%= relative_time(@post.created_at) %> ago</p>
             <hr>
             <p class="lead"><%= markdown(@post.body).html_safe%></p>
             <%= social_share_button_tag(@post.title) %>
