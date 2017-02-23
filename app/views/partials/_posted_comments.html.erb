@@ -1,5 +1,6 @@
 <div class="media-body">
     <% @post.comments.each do |comment| %>
+    <h5>comented by: <span><%= @post.user.username %></span></h5>
     <i class="fa fa-comments" aria-hidden="true">comment by</i>
     <p> <%= comment.comment %></p>
     <% end %>
