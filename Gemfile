@@ -56,10 +56,10 @@ end
 
 
 
-# group :production do
-#   gem 'pg', '0.19.0'
-#   gem 'rails_12factor'
-# end
+group :production do
+  gem 'pg', '0.19.0'
+  gem 'rails_12factor'
+end
 gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
