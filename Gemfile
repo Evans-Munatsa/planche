@@ -30,10 +30,6 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'jquery-turbolinks'
 gem 'social-share-button'
 
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
@@ -45,6 +41,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
@@ -53,10 +54,12 @@ group :development do
   gem "binding_of_caller"
 end
 
-group :production do
-  gem 'pg', '0.19.0'
-  gem 'rails_12factor'
-end
+
+
+# group :production do
+#   gem 'pg', '0.19.0'
+#   gem 'rails_12factor'
+# end
 gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
