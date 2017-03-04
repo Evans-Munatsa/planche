@@ -54,11 +54,9 @@ group :development do
   gem "binding_of_caller"
 end
 
-
-
 group :production do
-  gem 'pg', '0.19.0'
-  gem 'rails_12factor'
+  gem 'unicorn'
+  gem 'pg'
 end
 gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
