@@ -31,10 +31,14 @@
     </script>
     
     <%= render "partials/header" %>
-    <div class="container content"></div>
-    <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: 'alert alert-info' %>
-    <% end %>
+    <% unless flash.empty? %>
+     <script type="text/javascript">
+          <% flash.each do |f| %>
+        <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+         toastr['<%= type %>']('<%= f[1] %>');
+     <% end %>
+     </script>
+<% end %>
     <%= yield %>
     <%= render "partials/footer" %>
   </body>

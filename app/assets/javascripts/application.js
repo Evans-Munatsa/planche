@@ -17,6 +17,7 @@
 //= require masonry/jquery.masonry
 //= require ckeditor/init
 //= require bootstrap
+//= require toastr
 //= require turbolinks
 //= require social-share-button
 //= require_tree .
