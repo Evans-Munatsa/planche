@@ -34,7 +34,13 @@ test:
 # production:
 #   <<: *default
 #   database: db/production.sqlite3
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+
 production:
   adapter: postgresql
-  encoding: unicode
+  database: graceful-37016
   pool: 5
+  timeout: 5000
