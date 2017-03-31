@@ -58,7 +58,6 @@ group :development do
 end
 
 group :production do
-  gem 'unicorn'
   gem 'pg'
 end
 gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
