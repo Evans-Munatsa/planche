@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   validates_presence_of :title, format: { with: VALID_EMAIL_REGEX },
                                           uniqueness: true
   validates_presence_of :body
+  validates_presence_of :category
   
   belongs_to :user, :foreign_key => "user_id"
   belongs_to :category

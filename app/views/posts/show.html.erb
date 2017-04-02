@@ -3,10 +3,16 @@
         <div class="col-lg-8">
             <h1><%= @post.title %></h1>
             <hr>
+            <h5>Written by: <span><%= @post.user.username %></span></h5>
             <p><span class="fa fa-clock-o"></span> <%= relative_time(@post.created_at) %> ago</p>
             <hr>
             <p class="lead"><%= markdown(@post.body).html_safe%></p>
+            <% if current_user && current_user.superadmin %>
+            <%= link_to "Edit", edit_post_path, class: "btn btn-warning" %>
+            <%=link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
+            <% end %>
             <%= social_share_button_tag(@post.title) %>
+
             <hr>
             <!-- Comments Form -->
             <div class="well">
@@ -36,3 +42,4 @@
     <!-- /.row -->
     <hr>
 </div>
+           
