@@ -43,8 +43,8 @@ RailsAdmin.config do |config|
   end
 
   config.model Post do
-  edit do
-   configure :body, :ck_editor
+    edit do
+      configure :body, :ck_editor
+    end
   end
-end
 end
