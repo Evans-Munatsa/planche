@@ -16,14 +16,9 @@
             <hr>
             <!-- Comments Form -->
             <div class="well">
-                <%= render "partials/comments_form" %>
+                <%= commontator_thread(@post) %>
             </div>
             <hr>
-            <!-- Posted Comments -->
-
-            <div class="media">
-                <%= render "partials/posted_comments" %>
-            </div>
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-lg-4">

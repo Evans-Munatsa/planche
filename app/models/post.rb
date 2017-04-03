@@ -10,7 +10,8 @@ class Post < ApplicationRecord
   
   belongs_to :user, :foreign_key => "user_id"
   belongs_to :category
-  has_many :comments
+  # has_many :comments
+  acts_as_commontable
 
   acts_as_votable
 end

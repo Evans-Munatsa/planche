@@ -118,6 +118,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.11.1)
+    commontator (4.11.1)
+      jquery-rails
+      rails (>= 3.1)
     concurrent-ruby (1.0.2)
     countries (2.0.4)
       i18n_data (~> 0.7.0)
@@ -356,6 +359,7 @@ DEPENDENCIES
   ckeditor
   coderay
   coffee-rails (~> 4.2)
+  commontator (~> 4.11.1)
   country_select
   devise
   factory_girl_rails
@@ -393,4 +397,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 BUNDLED WITH
-   1.13.7
+   1.14.6
