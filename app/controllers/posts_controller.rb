@@ -29,6 +29,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    commontator_thread_show(@post)
   end
 
   def edit
